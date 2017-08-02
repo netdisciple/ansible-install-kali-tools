@@ -1,0 +1,16 @@
+---
+
+- name: git clone https://github.com/LionSec/katoolin.git
+  become: no
+  git:
+    repo: https://github.com/LionSec/katoolin.git
+    dest: /home/darkform/repo/katoolin/
+    clone: yes
+
+- name: cp katoolin/katoolin.py /usr/bin/katoolin
+  copy:
+    src: /home/darkform/repo/katoolin/katoolin.py
+    dest: /usr/bin/katoolin
+    owner: root
+    group: root
+    mode: "0755"

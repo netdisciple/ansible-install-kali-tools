@@ -1,0 +1,8 @@
+---
+
+- name: Install Nessus deb file
+  apt:
+    deb: "{{ role_path }}/files/Nessus-6.10.9-ubuntu1110_amd64.deb"
+  register: install_output
+
+- debug: var=install_output
